@@ -1,10 +1,20 @@
 package com.sudoagile.screenmatch.modelos;
 
+import com.sudoagile.screenmatch.calculos.Clasificable;
 
-public class Episodios {
-   private int numero;
-   private String nombre;
-   private Serie serie;
+public class Episodio implements Clasificable {
+    private int numero;
+    private String nombre;
+    private Serie serie;
+    private int totalVisualizaciones;
+
+    public int getTotalVisualizaciones() {
+        return totalVisualizaciones;
+    }
+
+    public void setTotalVisualizaciones(int totalVisualizaciones) {
+        this.totalVisualizaciones = totalVisualizaciones;
+    }
 
     public int getNumero() {
         return numero;
@@ -28,5 +38,14 @@ public class Episodios {
 
     public void setSerie(Serie serie) {
         this.serie = serie;
+    }
+
+    @Override
+    public int getClasificacion() {
+        if (totalVisualizaciones > 100) {
+            return 4;
+        } else {
+            return 2;
+        }
     }
 }

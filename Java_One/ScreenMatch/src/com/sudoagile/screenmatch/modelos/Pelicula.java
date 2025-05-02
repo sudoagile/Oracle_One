@@ -1,6 +1,8 @@
 package com.sudoagile.screenmatch.modelos;
 
-public class Pelicula extends Titulo {
+import com.sudoagile.screenmatch.calculos.Clasificable;
+
+public class Pelicula extends Titulo implements Clasificable {
     private String director;
 
     public String getDirector() {
@@ -9,5 +11,10 @@ public class Pelicula extends Titulo {
 
     public void setDirector(String director) {
         this.director = director;
+    }
+
+    @Override
+    public int getClasificacion() {
+        return (int) calculaMediaEvaluaciones() / 2;
     }
 }

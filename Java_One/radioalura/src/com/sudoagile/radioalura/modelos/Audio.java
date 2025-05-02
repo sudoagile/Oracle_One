@@ -2,7 +2,7 @@ package com.sudoagile.radioalura.modelos;
 
 public class Audio {
     private String titulo;
-    private int totalDeReproduccioes;
+    private int totalDeReproducciones;
     private int totalDeMeGusta;
     private int clasificacion;
 
@@ -11,7 +11,7 @@ public class Audio {
 
     }
     public void reproduce() {
-        this.totalDeReproduccioes++;
+        this.totalDeReproducciones++;
 
     }
 
@@ -23,12 +23,12 @@ public class Audio {
         this.titulo = titulo;
     }
 
-    public int getTotalDeReproduccioes() {
-        return totalDeReproduccioes;
+    public int getTotalDeReproducciones() {
+        return totalDeReproducciones;
     }
 
-    public void setTotalDeReproduccioes(int totalDeReproduccioes) {
-        this.totalDeReproduccioes = totalDeReproduccioes;
+    public void setTotalDeReproducciones(int totalDeReproducciones) {
+        this.totalDeReproducciones = totalDeReproducciones;
     }
 
     public int getTotalDeMeGusta() {

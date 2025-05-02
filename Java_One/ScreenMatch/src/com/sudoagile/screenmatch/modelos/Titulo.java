@@ -1,13 +1,12 @@
 package com.sudoagile.screenmatch.modelos;
 
 public class Titulo {
-
     private String nombre;
     private int fechaDeLanzamiento;
-    private int duracionEnMinutos;
     private boolean incluidoEnElPlan;
     private double sumaDeLasEvaluaciones;
-    private int totalDeLasEvaluaciones;
+    private int totalDeEvaluaciones;
+    private int duracionEnMinutos;
 
     public String getNombre() {
         return nombre;
@@ -17,12 +16,16 @@ public class Titulo {
         return fechaDeLanzamiento;
     }
 
+    public boolean isIncluidoEnElPlan() {
+        return incluidoEnElPlan;
+    }
+
     public int getDuracionEnMinutos() {
         return duracionEnMinutos;
     }
 
-    public boolean isIncluidoEnElPlan() {
-        return incluidoEnElPlan;
+    public int getTotalDeEvaluaciones() {
+        return totalDeEvaluaciones;
     }
 
     public void setNombre(String nombre) {
@@ -33,37 +36,25 @@ public class Titulo {
         this.fechaDeLanzamiento = fechaDeLanzamiento;
     }
 
-    public void setDuracionEnMinutos(int duracionEnMinutos) {
-        this.duracionEnMinutos = duracionEnMinutos;
-    }
-
     public void setIncluidoEnElPlan(boolean incluidoEnElPlan) {
         this.incluidoEnElPlan = incluidoEnElPlan;
     }
 
-
-
-    public int getTotalDeLasEvaluaciones() {
-        return totalDeLasEvaluaciones;
+    public void setDuracionEnMinutos(int duracionEnMinutos) {
+        this.duracionEnMinutos = duracionEnMinutos;
     }
 
     public void muestraFichaTecnica(){
-
-        System.out.println("El nombre de la pelicula es"
-                + nombre);
-        System.out.println("Su fecha de lanzamiento es: "
-                +fechaDeLanzamiento);
-        System.out.println("Duracion en Minutos: "
-                +getDuracionEnMinutos());
+        System.out.println("Nombre de la película: " + nombre);
+        System.out.println("Año de lanzamiento: " + fechaDeLanzamiento);
     }
 
     public void evalua(double nota){
-        sumaDeLasEvaluaciones+=nota;
-        totalDeLasEvaluaciones++;
-
-
+        sumaDeLasEvaluaciones += nota;
+        totalDeEvaluaciones++;
     }
-    public double calculaMedia(){
-        return sumaDeLasEvaluaciones/totalDeLasEvaluaciones;
+
+    public double calculaMediaEvaluaciones(){
+        return sumaDeLasEvaluaciones / totalDeEvaluaciones;
     }
 }
