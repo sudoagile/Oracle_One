@@ -1,12 +1,13 @@
 package com.sudoagile.screenmatch.modelos;
 
 import com.google.gson.annotations.SerializedName;
+import com.sudoagile.screenmatch.excepcion.ErrorEnConversionDeDuracionException;
 
 public class Titulo implements Comparable<Titulo> {
 
-    @SerializedName("Title")
+    //@SerializedName("Title")
     private String nombre;
-    @SerializedName("Year")
+    //@SerializedName("Year")
     private int fechaDeLanzamiento;
     private boolean incluidoEnElPlan;
     private double sumaDeLasEvaluaciones;
@@ -22,12 +23,10 @@ public class Titulo implements Comparable<Titulo> {
         this.fechaDeLanzamiento = Integer.valueOf(miTituloOmdb.year());
         if(miTituloOmdb.runtime().contains("N/A")){
             throw new ErrorEnConversionDeDuracionException("No puede convertir la duración" +
-                    "por que contiene un N/A");
+                    " porque contiene un N/A");
         }
         this.duracionEnMinutos = Integer.valueOf(miTituloOmdb.runtime().
                 substring(0,3).replace(" ",""));
-
-
 
     }
 
@@ -88,9 +87,9 @@ public class Titulo implements Comparable<Titulo> {
 
     @Override
     public String toString() {
-        return "nombre='" + nombre + '\'' +
+        return "(nombre='" + nombre +
                 ", fechaDeLanzamiento=" + fechaDeLanzamiento+
-                ", duracion"+duracionEnMinutos;
+                ", duracion="+duracionEnMinutos+")";
 
     }
 }
