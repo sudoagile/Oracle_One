@@ -3,6 +3,6 @@ public record Pelicula(
         int episode_id,
         String opening_crawl,
         String director,
-        String release_date ){
+        String release_date) {
 
 }
